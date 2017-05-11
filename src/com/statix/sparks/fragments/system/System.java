@@ -27,6 +27,7 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
+import com.statix.sparks.utils.TelephonyUtils;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 
@@ -39,6 +40,7 @@ public class System extends CustomSettingsPreferenceFragment implements Indexabl
     private static final String TAG = "System";
     private static final String ADVANCED_REBOOT = "advanced_reboot";
     private static final String SMART_PIXELS = "smart_pixels";
+    private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -47,6 +49,12 @@ public class System extends CustomSettingsPreferenceFragment implements Indexabl
         addPreferencesFromResource(R.xml.system);
         addCustomPreference(findPreference(ADVANCED_REBOOT), SECURE_TWO_STATE, STATE_ON);
         updateSmartPixelsPreference();
+         final PreferenceScreen prefSet = getPreferenceScreen();
+
+        PreferenceCategory incallVibCategory = (PreferenceCategory) findPreference(INCALL_VIB_OPTIONS);
+        if (!TelephonyUtils.isVoiceCapable(getActivity())) {
+			prefSet.removePreference(incallVibCategory);
+        }
      }
 
      private void updateSmartPixelsPreference() {
