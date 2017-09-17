@@ -20,6 +20,11 @@
     <PreferenceCategory
 	android:title="@string/notifications_category">
 
+        <Preference
+        android:key="battery_light_settings"
+        android:title="@string/battery_light_settings"
+        android:fragment="com.statix.sparks.fragments.extras.notification.BatteryLightSettings" />
+
         <com.statix.sparks.preferences.SystemSettingSwitchPreference
             android:key="notification_sound_vib_screen_on"
             android:title="@string/notification_sound_vib_screen_on_title"
