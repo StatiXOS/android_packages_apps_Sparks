@@ -50,6 +50,15 @@ public class System extends SettingsPreferenceFragment implements
         mExpandedDesktop.setTitle(R.string.expanded_desktop_title);
 
         ContentResolver resolver = getActivity().getContentResolver();
+
+
+        boolean enableSmartPixels = getContext().getResources().
+                getBoolean(com.android.internal.R.bool.config_enableSmartPixels);
+        Preference SmartPixels = findPreference("smart_pixels");
+
+        if (!enableSmartPixels){
+            prefSet.removePreference(SmartPixels);
+        }
     }
 
     @Override
