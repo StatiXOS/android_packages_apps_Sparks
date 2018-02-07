@@ -34,6 +34,7 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.Utils;
+import com.android.settings.applications.LayoutPreference;
 
 public class System extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
