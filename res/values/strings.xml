@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2016 CarbonROM
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="sparks">Sparks</string>
+    <string name="navigation_category">Navigation</string>
+    <string name="gestures_category">Gestures</string>
+    <string name="misc_category">Miscellaneous</string>
+    <string name="lockscreen_category">Lockscreen</string>
+    <string name="statusbar_category">Statusbar</string>
+
+    <!-- Gestures -->
+    <string name="gesture_preference_title">Gestures</string>
+    <string name="camera_gesture_title">Double twist for camera</string>
+    <string name="camera_gesture_desc">Open the camera app by twisting your wrist twice</string>
+    <string name="camera_double_tap_power_gesture_title">Press power button twice for camera</string>
+    <string name="camera_double_tap_power_gesture_desc">Quickly open camera without unlocking your screen</string>
+</resources>
