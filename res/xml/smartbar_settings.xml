@@ -51,7 +51,7 @@
         android:entryValues="@array/smartbar_longpress_delay_values"
         android:summary="@string/smartbar_longpress_delay_summary" />
 
-    <com.abc.settings.preferences.CustomSeekBarPreference
+    <com.statix.sparks.preferences.CustomSeekBarPreference
         android:key="navbar_buttons_alpha"
         android:title="@string/navbar_buttons_alpha_title"
         android:max="255"
@@ -59,13 +59,19 @@
         settings:units=""
         android:persistent="false" />
 
-    <com.abc.settings.preferences.CustomSeekBarPreference
+    <com.statix.sparks.preferences.CustomSeekBarPreference
         android:key="smartbar_custom_icon_size"
         android:title="@string/smartbar_custom_icon_size_title"
         android:max="100"
         settings:min="10"
         settings:units="%"
         android:persistent="false" />
+     
+    <com.statix.sparks.preferences.SecureSettingSwitchPreference
+        android:key="smartbar_doubletap_sleep"
+        android:title="@string/smartbar_double_tap_sleep_title"
+        android:summary="@string/smartbar_double_tap_sleep_summary"
+        android:defaultValue="false" />
 
     <!--<com.abc.settings.preferences.SecureSettingSwitchPreference
         android:key="one_handed_mode_ui"
