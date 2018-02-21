@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.carbonrom.carbonfibers.fragments.statusbar;
+package com.statix.sparks.fragments.statusbar;
 
 import android.content.Context;
 import android.content.ContentResolver;
@@ -50,7 +50,7 @@ public class Statusbar extends SettingsPreferenceFragment implements
 
     @Override
     public int getMetricsCategory() {
-        return MetricsEvent.CARBONFIBERS;
+        return MetricsEvent.SPARKS;
     }
 
     @Override

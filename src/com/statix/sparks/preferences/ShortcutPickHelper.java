@@ -41,7 +41,7 @@ import android.widget.ExpandableListView;
 import android.widget.TextView;
 
 import com.android.settings.R;
-import com.abc.settings.ShortcutPickHelper.AppExpandableAdapter.GroupInfo;
+import com.statix.sparks.preferences.ShortcutPickHelper.AppExpandableAdapter.GroupInfo;
 
 public class ShortcutPickHelper {
 

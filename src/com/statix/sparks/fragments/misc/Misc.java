@@ -63,11 +63,10 @@ public class Misc extends SettingsPreferenceFragment implements
         super.onPause();
     }
 
-    public boolean onPreferenceChange(Preference preference, Object objValue) {
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
         final String key = preference.getKey();
 
-        ContentResolver resolver = getActivity().getContentResolver();
-
+	return true;
     }
 
 }

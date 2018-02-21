@@ -18,6 +18,7 @@
 package net.margaritov.preference.colorpicker;
 
 import android.app.AlertDialog;
+import android.app.NotificationManager;
 import android.content.Context;
 import android.graphics.PixelFormat;
 import android.os.Bundle;
@@ -38,6 +39,9 @@ public class ColorPickerDialog extends AlertDialog implements ColorPickerView.On
     private ColorPickerPanelView mNewColor;
     private EditText mHex;
 
+    private NotificationManager mNoMan;
+    private Context mContext;
+
     private OnColorChangedListener mListener;
 
     public interface OnColorChangedListener {
@@ -46,7 +50,7 @@ public class ColorPickerDialog extends AlertDialog implements ColorPickerView.On
 
     ColorPickerDialog(Context context, int initialColor) {
         super(context);
-
+        mContext = context;
         init(initialColor);
     }
 
@@ -62,6 +66,8 @@ public class ColorPickerDialog extends AlertDialog implements ColorPickerView.On
 
         LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(
                 Context.LAYOUT_INFLATER_SERVICE);
+        mNoMan = (NotificationManager)
+                mContext.getSystemService(Context.NOTIFICATION_SERVICE);
 
         assert inflater != null;
         View layout = inflater.inflate(R.layout.dui_dialog_color_picker, null);
@@ -137,6 +143,12 @@ public class ColorPickerDialog extends AlertDialog implements ColorPickerView.On
         }
         dismiss();
     }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+    }
+
 
     @NonNull
     @Override

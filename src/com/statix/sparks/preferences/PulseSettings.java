@@ -65,6 +65,7 @@ public class PulseSettings extends SettingsPreferenceFragment implements
     CustomSeekBarPreference mSolidCount;
     CustomSeekBarPreference mSolidOpacity;
     CustomSeekBarPreference mNavButtonsOpacity;
+    SwitchPreference mAutoColor;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -195,6 +196,11 @@ public class PulseSettings extends SettingsPreferenceFragment implements
             Settings.Secure.putIntForUser(getContentResolver(),
                     Settings.Secure.FLING_PULSE_ENABLED, enabled ? 1 : 0, UserHandle.USER_CURRENT);
             return true;
+        } else if (preference.equals(mAutoColor)) {
+            boolean enabled = ((Boolean) newValue).booleanValue();
+            Settings.Secure.putIntForUser(getContentResolver(),
+                    Settings.Secure.PULSE_AUTO_COLOR, enabled ? 1 : 0, UserHandle.USER_CURRENT);
+            return true;
         } else if (preference.equals(mPulseColor)) {
             int color = ((Integer) newValue).intValue();
             Settings.Secure.putIntForUser(getContentResolver(),
@@ -269,6 +275,6 @@ public class PulseSettings extends SettingsPreferenceFragment implements
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.ABC;
+        return MetricsProto.MetricsEvent.SPARKS;
     }
 }

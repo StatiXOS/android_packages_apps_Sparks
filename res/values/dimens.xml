@@ -14,6 +14,10 @@
 
 <resources>
 
+    <!-- Notification light -->
+    <dimen name="alert_dialog_padding_material">20dp</dimen>
+    <dimen name="oval_notification_size">26dp</dimen>
+
     <!-- Navbar height -->
     <integer name="navigation_bar_height_min_percent">65</integer>
     <integer name="navigation_bar_height_max_percent">135</integer>

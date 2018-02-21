@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<<<<<<< HEAD:res/xml/lockscreen.xml
-<!--  Copyright (C) 2016 CarbonROM
-=======
 <!--
   Copyright (C) 2017 ABC rom
   Copyright (C) 2014 The OmniROM Project
 
->>>>>>> 7e0b127... DUI: Initial checkin for Oreo [4/7]:res/layout/dialog_iconpack.xml
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
   the Free Software Foundation, either version 3 of the License, or

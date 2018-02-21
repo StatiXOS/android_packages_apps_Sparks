@@ -28,7 +28,7 @@ import com.android.internal.utils.du.Config;
 import com.android.internal.utils.du.Config.ActionConfig;
 import com.android.internal.utils.du.Config.ButtonConfig;
 
-import com.statix.sparks.ShortcutPickHelper;
+import com.statix.sparks.preferences.ShortcutPickHelper;
 import com.statix.sparks.preferences.ActionPreference;
 import com.statix.sparks.preferences.CustomActionListAdapter;
 
