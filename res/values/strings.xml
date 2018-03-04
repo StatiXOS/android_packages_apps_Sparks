@@ -19,6 +19,8 @@
     <string name="misc_category">Miscellaneous</string>
     <string name="lockscreen_category">Lockscreen</string>
     <string name="statusbar_category">Statusbar</string>
+    <string name="system_category">System</string>
+
     <!-- Dialog -->
     <string name="sparks_dialog_title">Help me help you!</string>
     <string name="sparks_dialog_message">Unfortunately, I am not a wizard!</string>

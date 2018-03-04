@@ -33,13 +33,13 @@
             android:key="smartbar_settings"
             android:title="@string/smartbar_settings_title"
             android:summary="@string/smartbar_settings_summary"
-            android:fragment="com.statix.sparks.fragments.SmartbarSettings" />
+            android:fragment="com.statix.sparks.preferences.SmartbarSettings" />
 
         <Preference
             android:key="fling_settings"
             android:title="@string/fling_settings"
             android:summary="@string/fling_settings_summary"
-            android:fragment="com.statix.sparks.fragments.FlingSettings" />
+            android:fragment="com.statix.sparks.preferences.FlingSettings" />
 
         <!--<Preference
             android:key="default_settings"
@@ -86,7 +86,7 @@
         <Preference
             android:key="pulse_settings"
             android:title="@string/pulse_settings"
-            android:fragment="com.statix.sparks.fragments.PulseSettings" />
+            android:fragment="com.statix.sparks.preferences.PulseSettings" />
 
     </PreferenceCategory>
 </PreferenceScreen>
