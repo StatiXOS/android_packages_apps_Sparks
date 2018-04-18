@@ -37,7 +37,7 @@ import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
-import com.android.settings.carbon.SystemSettingSwitchPreference;
+import com.statix.sparks.preferences.SystemSettingSwitchPreference;
 
 public class SmartPixels extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
@@ -60,6 +60,8 @@ public class SmartPixels extends SettingsPreferenceFragment implements
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.smart_pixels);
+
+        mFooterPreferenceMixin.createFooterPreference().setTitle(R.string.smart_pixels_warning_text);
 
         resolver = getActivity().getContentResolver();
 

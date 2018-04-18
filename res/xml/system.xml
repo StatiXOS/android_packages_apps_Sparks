@@ -28,7 +28,7 @@
         android:fragment="com.statix.sparks.fragments.system.SmartPixels" />
 
     <PreferenceCategory
-        android:title="@string/system_global_actions_category">
+        android:title="@string/system_global_actions_category" />
 
     <Preference
 	android:key="qs_anim_interpolator"
