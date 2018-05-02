@@ -77,6 +77,13 @@
             android:summary="@string/volume_rocker_music_controls_summary"
             android:defaultValue="false" />
 
+        <!-- Volume rocker wake screen -->
+        <com.statix.sparks.preferences.SystemSettingMasterSwitchPreference
+            android:key="volume_rocker_wake"
+            android:title="@string/volume_rocker_wake_title"
+            android:summary="@string/volume_rocker_wake_summary"
+            android:defaultValue="false" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
