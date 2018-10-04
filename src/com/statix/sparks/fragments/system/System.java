@@ -43,23 +43,8 @@ public class System extends CustomSettingsPreferenceFragment {
         boolean enableSmartPixels = getContext().getResources().
                 getBoolean(com.android.internal.R.bool.config_enableSmartPixels);
         Preference smartPixels = findPreference(SMART_PIXELS);
-         if (!enableSmartPixels){
+        if (!enableSmartPixels){
             prefSet.removePreference(smartPixels);
         }
-    }
-
-    @Override
-    public int getMetricsCategory() {
-        return MetricsEvent.SPARKS;
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
     }
 }
