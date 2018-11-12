@@ -108,5 +108,17 @@
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                 android:value="com.statix.sparks.fragments.lockscreen.Lockscreen" />
         </activity>
+
+        <!-- Quick Settings -->
+        <activity android:name="Settings$QuickSettingsActivity"
+                android:label="@string/qs_category"
+                android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.statix.sparks.fragments.qs.QS" />
+        </activity>
     </application>
 </manifest>
