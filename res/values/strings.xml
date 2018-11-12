@@ -20,6 +20,7 @@
     <string name="navigation_category">Navigation</string>
     <string name="statusbar_category">Statusbar</string>
     <string name="system_category">System</string>
+    <string name="qs_category">Quick settings</string>
 
     <string name="system_global_actions_category">Global actions</string>
 
