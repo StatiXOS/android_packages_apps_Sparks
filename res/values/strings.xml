@@ -141,4 +141,8 @@
     <string name="set">Set</string>
     <string name="color_default">Default</string>
 
+    <!-- 4G icon -->
+    <string name="show_fourg_icon_title">4G icon</string>
+    <string name="show_fourg_icon_summary">Display 4G icon instead of LTE icon</string>  
+
 </resources>
