@@ -197,6 +197,8 @@
     <string name="traffic_title">Net activity indicators</string>
     <string name="network_traffic_state_title">Show net activity in expanded statusbar</string>
     <string name="network_traffic_autohide_threshold_title">Net activity autohide threshold (KB/s)</string>
+    <string name="network_traffic_hidearrow">Hide arrows</string>
+    <string name="network_traffic_hidearrow_summary">Hide the network traffic indicator arrows</string>
 
     <!-- 4G icon -->
     <string name="show_fourg_icon_title">4G icon</string>
