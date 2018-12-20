@@ -35,4 +35,13 @@
         android:title="@string/three_finger_gesture"
         android:summary="@string/three_finger_gesture_summary"
         android:defaultValue="false" />
+
+    <ListPreference
+        android:key="double_tap_power_flashlight"
+        android:title="@string/double_tap_power_flashlight_title"
+        android:entries="@array/double_tap_power_flashlight_entries"
+        android:entryValues="@array/double_tap_power_flashlight_values"
+        app:controller="com.android.settings.gestures.DoubleTapPowerFlashlightPreferenceController"
+        app:keywords="@string/keywords_gesture"
+        app:allowDividerAbove="true" />
 </PreferenceScreen>
