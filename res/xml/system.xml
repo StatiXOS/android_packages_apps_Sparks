@@ -41,4 +41,11 @@
         android:summary="@string/smart_pixels_summary"
         android:fragment="com.statix.sparks.fragments.system.SmartPixels" />
 
+    <Preference
+        android:key="button_brightness"
+        android:title="@string/button_backlight_title"
+        android:summary="@string/button_backlight_summary"
+        android:persistent="false"
+        android:fragment="com.statix.sparks.fragments.system.ButtonBrightness" />
+
 </PreferenceScreen>
