@@ -17,6 +17,13 @@
     android:title="@string/buttons_category"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <Preference
+        android:key="button_brightness"
+        android:title="@string/button_backlight_title"
+        android:summary="@string/button_backlight_summary"
+        android:persistent="false"
+        android:fragment="com.statix.sparks.fragments.buttons.ButtonBrightness" />
+
     <PreferenceCategory
          android:key="hardware_keys"
 	 android:title="@string/hardware_keys_category">
