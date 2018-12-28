@@ -48,6 +48,7 @@ public class Buttons extends ActionFragment implements Preference.OnPreferenceCh
     private static final String CATEGORY_MENU = "menu_key";
     private static final String CATEGORY_ASSIST = "assist_key";
     private static final String CATEGORY_APPSWITCH = "app_switch_key";
+    private static final String CATEGORY_BACKLIGHT = "button_brightness";
 
     // Masks for checking presence of hardware keys.
     // Must match values in frameworks/base/core/res/res/values/config.xml
@@ -71,6 +72,14 @@ public class Buttons extends ActionFragment implements Preference.OnPreferenceCh
 
           final boolean needsNavbar = ActionUtils.hasNavbarByDefault(getActivity());
 	  final PreferenceCategory hwkeyCat = (PreferenceCategory) prefScreen.findPreference(CATEGORY_HWKEY);
+
+          boolean hasBacklight = getResources().getBoolean(com.android.internal.R.bool.config_button_brightness_support);
+          final Preference backlightCat = prefScreen.findPreference(CATEGORY_BACKLIGHT);
+
+          if (!hasBacklight) {
+              prefScreen.removePreference(backlightCat);
+          }
+
 	  int keysDisabled = 0;
 	  if (!needsNavbar) {
 	  	mHwKeyDisable = (SwitchPreference) findPreference(HWKEY_DISABLE);
