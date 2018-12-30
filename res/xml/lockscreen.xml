@@ -41,4 +41,16 @@
             android:targetClass="com.android.systemui.tuner.LockscreenTunerActivity" />
     </Preference>
 
+    <com.statix.sparks.preferences.SystemSettingSwitchPreference
+        android:key="lockscreen_clock"
+        android:title="@string/lockscreen_clock_title"
+        android:summary="@string/lockscreen_clock_summary"
+        android:defaultValue="true" />
+
+    <com.statix.sparks.preferences.SystemSettingSwitchPreference
+        android:key="lockscreen_date"
+        android:title="@string/lockscreen_date_title"
+        android:summary="@string/lockscreen_date_summary"
+        android:defaultValue="true" />
+
 </PreferenceScreen>
