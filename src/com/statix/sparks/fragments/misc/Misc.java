@@ -20,7 +20,9 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.ContentResolver;
 import android.database.ContentObserver;
+import android.content.Context;
 import android.os.Bundle;
+import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
@@ -31,9 +33,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
-import com.android.settings.R;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.internal.util.du.ActionUtils;
+
+import com.android.settings.R;
+import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settings.search.Indexable;
+import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.Utils;
 
 import com.statix.sparks.preferences.CustomSettingsPreferenceFragment;
 
@@ -42,7 +49,8 @@ import com.statix.support.preferences.IconPackPreference;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Misc extends CustomSettingsPreferenceFragment implements OnPreferenceChangeListener {
+public class Misc extends CustomSettingsPreferenceFragment implements 
+	OnPreferenceChangeListener, Indexable {
     private static final String TAG = "Misc";
     private ListPreference mRecentsComponentType;
     private static final String RECENTS_COMPONENT_TYPE = "recents_component";
@@ -101,4 +109,23 @@ public class Misc extends CustomSettingsPreferenceFragment implements OnPreferen
         }
         return false;
     }
+
+    public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
+            new BaseSearchIndexProvider() {
+                @Override
+                public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
+                        boolean enabled) {
+                    final ArrayList<SearchIndexableResource> result = new ArrayList<>();
+                    final SearchIndexableResource sir = new SearchIndexableResource(context);
+                    sir.xmlResId = R.xml.lockscreen_items;
+                    result.add(sir);
+                    return result;
+                }
+
+                @Override
+                public List<String> getNonIndexableKeys(Context context) {
+                    final List<String> keys = super.getNonIndexableKeys(context);
+                    return keys;
+                }
+    };
 }

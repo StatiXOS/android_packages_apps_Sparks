@@ -16,21 +16,31 @@
 
 package com.statix.sparks.fragments.statusbar;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 
-import com.android.settings.R;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settingslib.graph.BatteryMeterDrawableBase;
 
+import com.android.settings.R;
+import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settings.search.Indexable;
+import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.Utils;
+
 import com.statix.sparks.preferences.CustomSettingsPreferenceFragment;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Statusbar extends CustomSettingsPreferenceFragment implements
-	    OnPreferenceChangeListener {
+	    OnPreferenceChangeListener, Indexable {
     private static final String TAG = "Status bar";
     private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
     private static final String BATTERY_PERCENT = "show_battery_percent";
@@ -96,4 +106,23 @@ public class Statusbar extends CustomSettingsPreferenceFragment implements
     public void onPause() {
         super.onPause();
     }
+
+    public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
+            new BaseSearchIndexProvider() {
+                @Override
+                public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
+                        boolean enabled) {
+                    final ArrayList<SearchIndexableResource> result = new ArrayList<>();
+                    final SearchIndexableResource sir = new SearchIndexableResource(context);
+                    sir.xmlResId = R.xml.lockscreen_items;
+                    result.add(sir);
+                    return result;
+                }
+
+                @Override
+                public List<String> getNonIndexableKeys(Context context) {
+                    final List<String> keys = super.getNonIndexableKeys(context);
+                    return keys;
+                }
+    };
 }

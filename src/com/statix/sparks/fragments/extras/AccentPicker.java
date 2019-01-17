@@ -25,9 +25,11 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.om.IOverlayManager;
+import android.content.Context;
 import android.os.Bundle;
-import android.os.ServiceManager;
+import android.provider.SearchIndexableResource;
 import android.provider.Settings;
+import android.os.ServiceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -36,9 +38,18 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.statusbar.ThemeAccentUtils;
 
 import com.android.settings.R;
+import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settings.search.Indexable;
+import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.Utils;
+
 import com.android.settings.core.instrumentation.InstrumentedDialogFragment;
 
-public class AccentPicker extends InstrumentedDialogFragment implements OnClickListener {
+import java.util.ArrayList;
+import java.util.List;
+
+public class AccentPicker extends InstrumentedDialogFragment 
+	implements OnClickListener, Indexable {
 
     private static final String TAG_ACCENT_PICKER = "accent_picker";
 
@@ -186,4 +197,23 @@ public class AccentPicker extends InstrumentedDialogFragment implements OnClickL
             });
         }
     }
+
+    public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
+            new BaseSearchIndexProvider() {
+                @Override
+                public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
+                        boolean enabled) {
+                    final ArrayList<SearchIndexableResource> result = new ArrayList<>();
+                    final SearchIndexableResource sir = new SearchIndexableResource(context);
+                    sir.xmlResId = R.xml.lockscreen_items;
+                    result.add(sir);
+                    return result;
+                }
+
+                @Override
+                public List<String> getNonIndexableKeys(Context context) {
+                    final List<String> keys = super.getNonIndexableKeys(context);
+                    return keys;
+                }
+    };
 }
