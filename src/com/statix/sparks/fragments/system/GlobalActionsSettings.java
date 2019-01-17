@@ -15,13 +15,22 @@
  */
 package com.statix.sparks.fragments.system;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.os.UserHandle;
+import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 
 import com.android.settings.R;
+import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settings.search.Indexable;
+import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.Utils;
 
 import com.statix.sparks.preferences.CustomSettingsPreferenceFragment;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class GlobalActionsSettings extends CustomSettingsPreferenceFragment {
     private static final String GLOBAL_ACTIONS_POWER = "global_actions_power";
@@ -50,4 +59,23 @@ public class GlobalActionsSettings extends CustomSettingsPreferenceFragment {
         addCustomPreference(findPreference(GLOBAL_ACTIONS_FLASHLIGHT), SYSTEM_TWO_STATE, STATE_OFF);
         addCustomPreference(findPreference(GLOBAL_ACTIONS_USERS), SYSTEM_TWO_STATE, STATE_OFF);
     }
+  
+    public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
+       new BaseSearchIndexProvider() {
+           @Override
+           public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
+                        boolean enabled) {
+               final ArrayList<SearchIndexableResource> result = new ArrayList<>();
+               final SearchIndexableResource sir = new SearchIndexableResource(context);
+               sir.xmlResId = R.xml.global_actions;
+               result.add(sir);
+               return result;
+           }
+
+           @Override
+           public List<String> getNonIndexableKeys(Context context) {
+              final List<String> keys = super.getNonIndexableKeys(context);
+              return keys;
+           }
+      };
 }

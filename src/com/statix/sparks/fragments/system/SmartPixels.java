@@ -16,17 +16,29 @@
 
 package com.statix.sparks.fragments.system;
 
+import android.content.Context;
 import android.database.ContentObserver;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.UserHandle;
+import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 
 import com.android.settings.R;
+import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settings.search.Indexable;
+import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.Utils;
+
 import com.statix.sparks.preferences.CustomSettingsPreferenceFragment;
 
-public class SmartPixels extends CustomSettingsPreferenceFragment {
+import java.util.ArrayList;
+import java.util.List;
+
+public class SmartPixels extends CustomSettingsPreferenceFragment
+        implements Indexable {
+
     private static final String TAG = "SmartPixels";
     private static final String SMART_PIXELS_ENABLE = "smart_pixels_enable";
     private static final String SMART_PIXELS_ON_POWER_SAVE = "smart_pixels_on_power_save";
@@ -82,4 +94,23 @@ public class SmartPixels extends CustomSettingsPreferenceFragment {
             updateAllCustomPreferences();
         }
     }
+
+    public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
+       new BaseSearchIndexProvider() {
+           @Override
+           public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
+                        boolean enabled) {
+               final ArrayList<SearchIndexableResource> result = new ArrayList<>();
+               final SearchIndexableResource sir = new SearchIndexableResource(context);
+               sir.xmlResId = R.xml.smart_pixels;
+               result.add(sir);
+               return result;
+           }
+
+           @Override
+           public List<String> getNonIndexableKeys(Context context) {
+              final List<String> keys = super.getNonIndexableKeys(context);
+              return keys;
+           }
+      };
 }
