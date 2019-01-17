@@ -89,6 +89,11 @@ public class System extends CustomSettingsPreferenceFragment implements Indexabl
            @Override
            public List<String> getNonIndexableKeys(Context context) {
               final List<String> keys = super.getNonIndexableKeys(context);
+              boolean enableSmartPixels = context.getResources().
+                    getBoolean(com.android.internal.R.bool.config_enableSmartPixels);
+              if (!enableSmartPixels){
+                  keys.add(SMART_PIXELS);
+              }
               return keys;
            }
       };
