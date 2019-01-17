@@ -103,7 +103,11 @@ public class SmartPixels extends CustomSettingsPreferenceFragment
                final ArrayList<SearchIndexableResource> result = new ArrayList<>();
                final SearchIndexableResource sir = new SearchIndexableResource(context);
                sir.xmlResId = R.xml.smart_pixels;
-               result.add(sir);
+               boolean enableSmartPixels = context.getResources().
+                    getBoolean(com.android.internal.R.bool.config_enableSmartPixels);
+               if (enableSmartPixels) {
+                   result.add(sir);
+               }
                return result;
            }
 

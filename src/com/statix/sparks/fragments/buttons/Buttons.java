@@ -197,8 +197,36 @@ public class Buttons extends ActionFragment
                 @Override
                 public List<String> getNonIndexableKeys(Context context) {
                     final List<String> keys = super.getNonIndexableKeys(context);
+                    int deviceKeys = context.getResources().getInteger(
+                            com.android.internal.R.integer.config_deviceHardwareKeys);
+                    boolean hasMenu = (deviceKeys & KEY_MASK_MENU) != 0;
+                    boolean hasAssist = (deviceKeys & KEY_MASK_ASSIST) != 0;
+                    boolean hasAppSwitch = (deviceKeys & KEY_MASK_APP_SWITCH) != 0;
+                    boolean hasHome = (deviceKeys & KEY_MASK_HOME) != 0;
+                    boolean hasBack = (deviceKeys & KEY_MASK_BACK) != 0;
+
+                    if (deviceKeys == 0) {
+                        keys.add(CATEGORY_BACKLIGHT);
+                        keys.add(CATEGORY_HWKEY);
+                        keys.add(HWKEY_DISABLE);
+                    }
+                    if (!hasMenu) {
+                        keys.add(CATEGORY_MENU);
+                    }
+                    if (!hasAssist) {
+                        keys.add(CATEGORY_ASSIST);
+                    }
+                    if (!hasAppSwitch) {
+                        keys.add(CATEGORY_APPSWITCH);
+                    }
+                    if (!hasHome) {
+                        keys.add(CATEGORY_HOME);
+                    }
+                    if (!hasBack) {
+                        keys.add(CATEGORY_BACK);
+                    }
                     return keys;
                 }
-    };
+            };
 }
 
