@@ -29,6 +29,7 @@ import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
 import com.android.settings.R;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
@@ -41,7 +42,7 @@ import com.statix.support.preferences.IconPackPreference;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Misc extends CustomSettingsPreferenceFragment implements OnPreferenceChangeListener, DialogInterface.OnDismissListener {
+public class Misc extends CustomSettingsPreferenceFragment implements OnPreferenceChangeListener {
     private static final String TAG = "Misc";
     private ListPreference mRecentsComponentType;
     private static final String RECENTS_COMPONENT_TYPE = "recents_component";
@@ -82,5 +83,22 @@ public class Misc extends CustomSettingsPreferenceFragment implements OnPreferen
     @Override
     public void onPause() {
         super.onPause();
+    }
+
+    public boolean onPreferenceChange(Preference preference, Object objValue) {
+        if (preference == mRecentsComponentType) {
+            int type = Integer.valueOf((String) objValue);
+            int index = mRecentsComponentType.findIndexOfValue((String) objValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.RECENTS_COMPONENT, type);
+            mRecentsComponentType.setSummary(mRecentsComponentType.getEntries()[index]);
+            if (type == 1) { // Disable swipe up gesture, if oreo type selected
+               Settings.Secure.putInt(getActivity().getContentResolver(),
+                    Settings.Secure.SWIPE_UP_TO_SWITCH_APPS_ENABLED, 0);
+            }
+            Utils.showSystemUiRestartDialog(getContext());
+            return true;
+        }
+        return false;
     }
 }
