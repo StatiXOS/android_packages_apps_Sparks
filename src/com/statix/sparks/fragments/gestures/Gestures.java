@@ -38,18 +38,33 @@ import com.statix.sparks.preferences.CustomSettingsPreferenceFragment;
 public class Gestures extends CustomSettingsPreferenceFragment
         implements Indexable {
     private static final String TAG = "Gestures";
+    private static final String ACTIVE_EDGE_CATEGORY = "active_edge_category";
+
+    @Override
+    public int getMetricsCategory() {
+        return MetricsEvent.SPARKS;
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.custom_gestures);
-
     }
 
     @Override
-    public int getMetricsCategory() {
-        return MetricsEvent.SPARKS;
+    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
+        super.onCreatePreferences(savedInstanceState, rootKey);
+
+        Preference ActiveEdge = findPreference(ACTIVE_EDGE_CATEGORY);
+        if (!getResources().getBoolean(R.bool.has_elmyra_service)) {
+            getPreferenceScreen().removePreference(ActiveEdge);
+        } else {
+            if (!getContext().getPackageManager().hasSystemFeature(
+                    "android.hardware.sensor.assist")) {
+                getPreferenceScreen().removePreference(ActiveEdge);
+            }
+        }
     }
 
     @Override
@@ -77,6 +92,10 @@ public class Gestures extends CustomSettingsPreferenceFragment
                 @Override
                 public List<String> getNonIndexableKeys(Context context) {
                     final List<String> keys = super.getNonIndexableKeys(context);
+                    if (!context.getPackageManager().hasSystemFeature(
+                            "android.hardware.sensor.assist")) {
+                       keys.add(ACTIVE_EDGE_CATEGORY)
+                    }
                     return keys;
                 }
     };
