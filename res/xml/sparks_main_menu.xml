@@ -23,6 +23,7 @@
    <Preference
        android:fragment="com.statix.sparks.fragments.buttons.Buttons"
        android:icon="@drawable/ic_buttons"
+       android:key="buttons_category"
        android:title="@string/buttons_category" />
 
    <Preference
