@@ -31,11 +31,11 @@ import android.view.MenuItem;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.preference.CheckBoxPreference;
-import android.preference.Preference;
+import android.support.v7.preference.Preference;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceManager;
 import android.preference.Preference.OnPreferenceChangeListener;
-import android.preference.PreferenceScreen;
+import android.support.v7.preference.PreferenceScreen;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
@@ -61,6 +61,13 @@ public class Sparks extends SettingsPreferenceFragment {
         addPreferencesFromResource(R.xml.sparks_main_menu);
 
         setHasOptionsMenu(true);
+
+        final PreferenceScreen prefScreen = getPreferenceScreen();
+        final Preference buttonsCat = prefScreen.findPreference("buttons_category");
+        int hwkeys = getResources().getInteger(com.android.internal.R.integer.config_deviceHardwareKeys);
+        if (hwkeys==0) {
+            prefScreen.removePreference(buttonsCat);
+        }
     }
 
     @Override
