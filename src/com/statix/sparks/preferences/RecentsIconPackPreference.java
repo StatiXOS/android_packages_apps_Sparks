@@ -20,6 +20,8 @@ import android.content.Context;
 import android.provider.Settings;
 import android.util.AttributeSet;
 
+import com.android.settings.R;
+
 import com.statix.support.preferences.IconPackPreference;
 
  public class RecentsIconPackPreference extends IconPackPreference {
@@ -30,6 +32,7 @@ import com.statix.support.preferences.IconPackPreference;
 
      public RecentsIconPackPreference(Context context, AttributeSet attrs) {
         super(context, attrs, 0);
+        setLayoutResource(R.layout.recents_iconpack_preference);
     }
 
      public RecentsIconPackPreference(Context context, AttributeSet attrs, int defStyleAttr) {
