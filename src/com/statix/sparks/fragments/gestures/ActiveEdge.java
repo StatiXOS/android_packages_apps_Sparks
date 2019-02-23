@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.statix.sparks.fragments;
+package com.statix.sparks.fragments.gestures;
 
 import android.content.ContentResolver;
 import android.content.Context;
@@ -132,6 +132,21 @@ public class ActiveEdge extends SimpleActionFragment implements
                     ActionPreferenceInfo.TYPE_SECURE,
                     ActionHandler.SYSTEMUI_TASK_NO_ACTION,
                     Settings.Secure.SQUEEZE_SELECTION_SMART_ACTIONS);
+        }
+        return null;
+    }
+
+    @Override
+    protected ArrayList<String> getActionBlackListForPreference(String key) {
+        if (key.equals(KEY_SQUEEZE_SMART_ACTION)) {
+            ArrayList<String> blacklist = new ArrayList();
+            blacklist.add(ActionHandler.SYSTEMUI_TASK_BACK);
+            blacklist.add(ActionHandler.SYSTEMUI_TASK_KILL_PROCESS);
+            blacklist.add(ActionHandler.SYSTEMUI_TASK_EDITING_SMARTBAR);
+            blacklist.add(ActionHandler.SYSTEMUI_TASK_WIFIAP);
+            blacklist.add(ActionHandler.SYSTEMUI_TASK_MENU);
+            blacklist.add(ActionHandler.SYSTEMUI_TASK_APP_SEARCH);
+            return blacklist;
         }
         return null;
     }
