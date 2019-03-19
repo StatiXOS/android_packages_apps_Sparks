@@ -58,6 +58,7 @@
         <item>8</item>
     </string-array>
 
+
     <!-- Battery customizations -->
     <string-array name="status_bar_battery_style_entries" translatable="false">
         <item>@string/battery_style_port</item>
@@ -66,6 +67,17 @@
         <item>@string/battery_style_text</item>
         <item>@string/battery_style_hidden</item>
         <item>@string/status_bar_battery_style_q</item>
+
+    <!-- Lockscreen clock styles -->
+    <string-array name="lockscreen_clock_selection_entries" translatable="false">
+        <item>@string/lockscreen_clock_selection_digital</item>
+        <item>@string/lockscreen_clock_selection_digital_bold</item>
+        <item>@string/lockscreen_clock_selection_analog</item>
+        <item>@string/lockscreen_clock_selection_sammy</item>
+        <item>@string/lockscreen_clock_selection_sammy_bold</item>
+        <item>@string/lockscreen_clock_selection_sammy_accent</item>
+        <item>@string/lockscreen_clock_selection_sammy_accent_alt</item>
+
     </string-array>
 
     <string-array name="status_bar_battery_style_values" translatable="false">
@@ -75,6 +87,7 @@
         <item>3</item>
         <item>4</item>
         <item>5</item>
+
     </string-array>
 
     <!-- Battery circle percent -->
@@ -88,6 +101,9 @@
         <item>0</item>
         <item>1</item>
         <item>2</item>
+
+        <item>6</item>
+
     </string-array>
 
     <!-- Lockscreen cover art filter -->

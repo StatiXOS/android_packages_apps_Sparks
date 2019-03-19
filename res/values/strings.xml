@@ -233,6 +233,7 @@
     <string name="active_edge_wake_title">Allow when screen is off</string>
     <string name="active_edge_wake_summary">Trigger any action even when the screen is off</string>
     <string name="active_edge_footer_info">Not all squeeze actions within Active Edge have the capability to activate the display</string>
+
     <string name="action_nothing">No action</string>
     <string name="action_menu">Menu</string>
     <string name="action_app_switch">Recents</string>
@@ -249,6 +250,62 @@
     <string name="action_power_menu">Power menu</string>
     <string name="action_screenshot">Screenshot</string>
     <string name="action_qs_panel">QS panel</string>
+
+
+    <!--3-Finger screenshot-->
+    <string name="three_finger_gesture">Three finger gesture</string>
+    <string name="three_finger_gesture_summary">Swipe three finger to screenshot</string>
+
+    <!--Double Tap to Sleep Navbar-->
+    <string name="double_tap_sleep_navbar">Nav Bar</string>
+
+    <!--Double Tap to Sleep Lockscreen-->
+    <string name="double_tap_sleep_lockscreen">Lockscreen</string>
+
+    <!--Double Tap to Sleep Statusbar-->
+    <string name="double_tap_sleep_gesture_title">Status Bar</string>
+
+
+    <!--Owlsnest lockscreen-->
+    <string name="lockscreen_title">Lockscreen</string>
+    <string name="lockscreen_summary">Customize lockscreen layout and options</string>
+    <string name="secure_lockscreen">Secure lockscreen options</string>
+
+    <string name="lockscreen_qs_disabled_title">Disable quick settings when locked</string>
+    <string name="lockscreen_qs_disabled_summary">Disable expanding quick settings on secure lock screens</string>
+
+    <string name="lock_screen_shortcuts_title">Lock screen shortcuts</string>
+    <string name="lock_screen_shortcuts_summary">Manage lock screen bottom shortcuts</string>
+
+    <!-- Lock screen visualizer -->
+    <string name="lockscreen_visualizer_category">Visualizer</string>
+    <string name="lockscreen_visualizer_title">Enable lockscreen visualizer</string>
+    <string name="lockscreen_visualizer_summary">Show visualizer on lockscreen when music is playing</string>
+    <string name="lockscreen_visualizer_enable_custom">Use custom color</string>
+    <string name="lockscreen_visualizer_enable_custom_summary">Use a preset color instead of the generated color</string>
+    <string name="lockscreen_visualizer_custom_color">Visualizer Color</string>
+
+    <!-- ambient visualizer -->
+    <string name="ambient_visualizer_title">Ambient Music visualizer</string>
+    <string name="ambient_visualizer_summary">Shows the visualization bars also on ambient display (but less opaque)</string>
+
+    <!-- Lockscreen items -->
+    <string name="lockscreen_clock_title">Clock widget</string>
+    <string name="lockscreen_clock_summary">Show the clock widget on the lockscreen</string>
+    <string name="lockscreen_info_title">Items underneath the clock</string>
+    <string name="lockscreen_info_summary">Show the date, weather, alarms and zen on the lockscreen</string>
+
+    <!-- Lockscreen clock styles -->
+    <string name="lockscreen_clock_selection_title">Clock style</string>
+    <string name="lockscreen_clock_selection_digital">Default</string>
+    <string name="lockscreen_clock_selection_digital_bold">Digital (bold)</string>
+    <string name="lockscreen_clock_selection_analog">Analog</string>
+    <string name="lockscreen_clock_selection_du">Analog (du)</string>
+    <string name="lockscreen_clock_selection_sammy">Sammy</string>
+    <string name="lockscreen_clock_selection_sammy_bold">Sammy (bold)</string>
+    <string name="lockscreen_clock_selection_sammy_accent">Sammy with accent</string>
+    <string name="lockscreen_clock_selection_sammy_accent_alt">Sammy with accent (alt)</string>
+
 
     <!-- Lockscreen cover art filter -->
     <string name="lockscreen_cover_filter_title">Lockscreen album art filter</string>
