@@ -20,38 +20,38 @@
      android:title="@string/sparks"
      xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-   <Preference
+   <com.statix.sparks.preferences.CardViewPreference
        android:fragment="com.statix.sparks.fragments.buttons.Buttons"
        android:icon="@drawable/ic_buttons"
        android:key="buttons_category"
        android:title="@string/buttons_category" />
 
-   <Preference
+   <com.statix.sparks.preferences.CardViewPreference
        android:fragment="com.statix.sparks.fragments.gestures.Gestures"
        android:icon="@drawable/ic_gestures"
        android:title="@string/gestures_category" />
 
-   <Preference
+   <com.statix.sparks.preferences.CardViewPreference
        android:fragment="com.statix.sparks.fragments.lockscreen.Lockscreen"
        android:icon="@drawable/ic_lockscreen"
        android:title="@string/lockscreen_category" />
 
-   <Preference
+   <com.statix.sparks.preferences.CardViewPreference
        android:fragment="com.statix.sparks.fragments.misc.Misc"
        android:icon="@drawable/ic_misc"
        android:title="@string/misc_category" />
 
-   <Preference
+   <com.statix.sparks.preferences.CardViewPreference
        android:fragment="com.android.settings.smartnav.NavigationBarSettings"
        android:icon="@drawable/ic_navigation"
        android:title="@string/navigation_category" />
 
-   <Preference
+   <com.statix.sparks.preferences.CardViewPreference
        android:fragment="com.statix.sparks.fragments.statusbar.Statusbar"
        android:icon="@drawable/ic_statusbar"
        android:title="@string/statusbar_category" />
 
-   <Preference
+   <com.statix.sparks.preferences.CardViewPreference
        android:fragment="com.statix.sparks.fragments.system.System"
        android:icon="@drawable/ic_system"
        android:title="@string/system_category" />
