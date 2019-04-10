@@ -40,20 +40,11 @@ public class Lockscreen extends CustomSettingsPreferenceFragment
         implements Indexable {
     private static final String TAG = "Lockscreen";
 
-    private static final String KEY_WEATHER_TEMP = "weather_lockscreen_unit";
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.lockscreen);
-
-        SystemSettingListPreference mWeatherTemp =
-                (SystemSettingListPreference) findPreference(KEY_WEATHER_TEMP);
-        if (!com.android.internal.util.du.Utils.isPackageInstalled(
-                getActivity(), "com.android.providers.weather")) {
-            getPreferenceScreen().removePreference(mWeatherTemp);
-        }
     }
 
     @Override
