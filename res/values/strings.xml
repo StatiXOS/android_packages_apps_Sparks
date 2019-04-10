@@ -186,11 +186,6 @@
     <string name="lockscreen_clock_selection_sammy">Sammy</string>
     <string name="lockscreen_clock_selection_sammy_bold">Sammy (bold)</string>
 
-    <!-- Weather -->
-    <string name="weather_unit">Weather temperature unit</string>
-    <string name="weather_unit_metric" translatable="false">Celsius</string>
-    <string name="weather_unit_imperial" translatable="false">Fahrenheit</string>
-
     <!-- Network Traffic -->
     <string name="status_traffic_title">Customize net activity indicators</string>
     <string name="status_traffic_summary">Options for the statusbar network activity indicators</string>
