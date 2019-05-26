@@ -18,7 +18,9 @@
  <PreferenceScreen
      xmlns:android="http://schemas.android.com/apk/res/android"
      android:title="@string/sparks"
-     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+     android:clipToPadding="false"
+     android:layout_marginBottom="8dp">
 
    <com.statix.sparks.preferences.CardViewPreference
        android:fragment="com.statix.sparks.fragments.buttons.Buttons"
