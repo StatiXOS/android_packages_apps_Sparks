@@ -255,4 +255,9 @@
     <string name="lockscreen_cover_filter_none">None</string>
     <string name="lockscreen_cover_filter_grayscale">Grayscale</string>
     <string name="lockscreen_cover_filter_blur">Blur</string>
+
+    <!-- Fingerprint unlock keystore -->
+    <string name="fp_unlock_keystore_title">Allow fingerprint unlock after reboot</string>
+    <string name="fp_unlock_keystore_summary">Use at your own risk!</string>
+
 </resources>

@@ -32,6 +32,12 @@
             android:title="@string/global_actions_title"
             android:summary="@string/global_actions_summary"
             android:fragment="com.statix.sparks.fragments.system.GlobalActionsSettings" />
+  
+        <SwitchPreference
+            android:key="fp_unlock_keystore"
+            android:title="@string/fp_unlock_keystore_title"
+            android:summary="@string/fp_unlock_keystore_summary"
+            android:defaultValue="false" />
 
     </PreferenceCategory>
 
