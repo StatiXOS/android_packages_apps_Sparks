@@ -33,7 +33,6 @@
     <string name="global_actions_soundpanel">Painel de Som</string>
     <string name="global_actions_users">Usuários</string>
     <string name="global_actions_screenshot">Captura de Tela</string>
-    <string name="global_actions_screenrecord">Gravação de Tela</string>
     <string name="global_actions_flashlight">Lanterna</string>
     <string name="global_actions_advanced_reboot_title">Ativar reinício avançado</string>
     <string name="global_actions_advanced_reboot_summary">Mostrar opções para recovery e bootloader</string>
