@@ -20,66 +20,30 @@
     android:layout_height="wrap_content">
 
     <Button
-        android:id="@+id/userAccentOne"
+        android:id="@+id/userAccentEight"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_columnWeight="1"
         android:gravity="center"
         android:layout_gravity="fill_horizontal"
-        android:background="#900000" />
+        android:background="#B39DDB" />
 
     <Button
-        android:id="@+id/userAccentTwo"
+        android:id="@+id/userAccentNine"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_columnWeight="1"
         android:gravity="center"
         android:layout_gravity="fill_horizontal"
-        android:background="#42069a" />
+        android:background="#84C188" />
 
-    <Button
-        android:id="@+id/userAccentThree"
+     <Button
+        android:id="@+id/userAccentTen"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_columnWeight="1"
         android:gravity="center"
         android:layout_gravity="fill_horizontal"
-        android:background="#1976D2" />
-
-    <Button
-        android:id="@+id/userAccentFour"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_columnWeight="1"
-        android:gravity="center"
-        android:layout_gravity="fill_horizontal"
-        android:background="#42f4aa" />
-
-    <Button
-        android:id="@+id/userAccentFive"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_columnWeight="1"
-        android:gravity="center"
-        android:layout_gravity="fill_horizontal"
-        android:background="#0EE898" />
-
-    <Button
-        android:id="@+id/userAccentSix"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_columnWeight="1"
-        android:gravity="center"
-        android:layout_gravity="fill_horizontal"
-        android:background="#FFC27B" />
-
-    <Button
-        android:id="@+id/userAccentSeven"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_columnWeight="1"
-        android:gravity="center"
-        android:layout_gravity="fill_horizontal"
-        android:background="#FFCC00" />
+        android:background="#28BDD7" />
 
 </LinearLayout>
