@@ -76,6 +76,7 @@
     <string name="accent_picker_material_colors">Material palette</string>
     <string name="accent_picker_custom_colors">User requested</string>
     <string name="accent_picker_q_colors">Q colors</string>
+    <string name="rgb_accent">RGB Color Picker</string>
 
     <!-- Tuner strings -->
     <string name="status_bar_tuner_title">Status bar items</string>

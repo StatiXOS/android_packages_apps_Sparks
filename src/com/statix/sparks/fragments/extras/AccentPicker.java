@@ -25,8 +25,11 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.om.IOverlayManager;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.os.UserHandle;
 import android.os.ServiceManager;
+import android.os.SystemProperties;
 import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -37,10 +40,19 @@ import com.android.internal.statusbar.ThemeAccentUtils;
 
 import com.android.settings.R;
 import com.android.settings.core.instrumentation.InstrumentedDialogFragment;
+import com.android.settings.wrapper.OverlayManagerWrapper;
+
+import com.statix.support.colorpicker.ColorPickerPreference;
 
 public class AccentPicker extends InstrumentedDialogFragment implements OnClickListener {
 
     private static final String TAG_ACCENT_PICKER = "accent_picker";
+
+    private static final String ACCENT_COLOR = "accent_color";
+    private static final String ACCENT_COLOR_PROP = "persist.sys.theme.accentcolor";
+
+    private OverlayManagerWrapper mOverlayService;
+    private ColorPickerPreference mThemeColor;
 
     private View mView;
 
@@ -53,6 +65,7 @@ public class AccentPicker extends InstrumentedDialogFragment implements OnClickL
         mOverlayManager = IOverlayManager.Stub.asInterface(
                 ServiceManager.getService(Context.OVERLAY_SERVICE));
         mCurrentUserId = ActivityManager.getCurrentUser();
+        setupAccentPref();
     }
 
     @Override
@@ -65,6 +78,7 @@ public class AccentPicker extends InstrumentedDialogFragment implements OnClickL
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setView(mView)
+                .setPositiveButton(R.string.rgb_accent, this)
                 .setNegativeButton(R.string.cancel, this)
                 .setNeutralButton(R.string.theme_accent_picker_default, this)
                 .setCancelable(false);
@@ -162,6 +176,7 @@ public class AccentPicker extends InstrumentedDialogFragment implements OnClickL
 
         Button userAccentThirteen = mView.findViewById(R.id.userAccentThirteen);
         setAccent("29", userAccentThirteen);
+
     }
 
     @Override
@@ -176,6 +191,15 @@ public class AccentPicker extends InstrumentedDialogFragment implements OnClickL
                     Settings.System.ACCENT_PICKER, 0, mCurrentUserId);
             dismiss();
         }
+        if (which == AlertDialog.BUTTON_POSITIVE) {
+            int color = (Integer) newValue;
+            String hexColor = String.format("%08X", (0xFFFFFFFF & color));
+            SystemProperties.set(ACCENT_COLOR_PROP, hexColor);
+            mOverlayService.reloadAndroidAssets(UserHandle.USER_CURRENT);
+            mOverlayService.reloadAssets("com.android.settings", UserHandle.USER_CURRENT);
+            mOverlayService.reloadAssets("com.android.systemui", UserHandle.USER_CURRENT);
+            dismiss();
+        }            
     }
 
     public static void show(Fragment parent) {
@@ -189,6 +213,16 @@ public class AccentPicker extends InstrumentedDialogFragment implements OnClickL
     @Override
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.SPARKS;
+    }
+
+    private void setupAccentPref() {
+        mThemeColor = (ColorPickerPreference) findPreference(ACCENT_COLOR);
+        String colorVal = SystemProperties.get(ACCENT_COLOR_PROP, "-1");
+        int color = "-1".equals(colorVal)
+                ? Color.WHITE
+                : Color.parseColor("#" + colorVal);
+        mThemeColor.setNewPreviewColor(color);
+        mThemeColor.setOnPreferenceChangeListener(this);
     }
 
     private void setAccent(final String accent, final Button buttonAccent) {
