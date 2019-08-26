@@ -73,4 +73,13 @@
         android:layout_gravity="fill_horizontal"
         android:background="#c42cc9" />
 
+     <Button
+        android:id="@+id/userAccentFourteen"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_columnWeight="1"
+        android:gravity="center"
+        android:layout_gravity="fill_horizontal"
+        android:background="#3ddc84" />
+
 </LinearLayout>

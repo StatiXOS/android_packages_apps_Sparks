@@ -162,6 +162,9 @@ public class AccentPicker extends InstrumentedDialogFragment implements OnClickL
 
         Button userAccentThirteen = mView.findViewById(R.id.userAccentThirteen);
         setAccent("29", userAccentThirteen);
+
+        Button userAccentFourteen = mView.findViewById(R.id.userAccentFourteen);
+        setAccent("30", userAccentFourteen);
     }
 
     @Override
